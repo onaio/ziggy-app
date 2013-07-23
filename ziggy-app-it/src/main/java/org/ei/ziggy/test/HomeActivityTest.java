@@ -1,0 +1,16 @@
+package org.ei.ziggy.test;
+
+import android.test.ActivityInstrumentationTestCase2;
+import org.ei.ziggy.*;
+
+public class HomeActivityTest extends ActivityInstrumentationTestCase2<HomeActivity> {
+    public HomeActivityTest() {
+        super(HomeActivity.class);
+    }
+
+    public void testActivity() {
+        HomeActivity activity = getActivity();
+        assertNotNull(activity);
+    }
+}
+

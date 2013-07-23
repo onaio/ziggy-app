@@ -1,0 +1,17 @@
+*.iml
+*.ipr
+*.iws
+.idea/
+.classpath
+.project
+bin/
+gen/
+out/
+target/
+local.properties
+ziggy-app/tmp/
+classes/
+tmp/
+project.properties
+.DS_Store
+.settings
