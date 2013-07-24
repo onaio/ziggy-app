@@ -8,7 +8,7 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import org.ei.ziggy.Context;
+import org.ei.ziggy.ZiggyContext;
 import org.ei.ziggy.R;
 
 import static android.webkit.ConsoleMessage.MessageLevel.ERROR;
@@ -24,7 +24,7 @@ public abstract class WebActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Context.getInstance().updateApplicationContext(this.getApplicationContext());
+        ZiggyContext.getInstance().updateApplicationContext(this.getApplicationContext());
 
         setContentView(R.layout.web);
 
