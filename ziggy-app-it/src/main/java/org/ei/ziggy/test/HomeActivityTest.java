@@ -1,7 +1,7 @@
 package org.ei.ziggy.test;
 
 import android.test.ActivityInstrumentationTestCase2;
-import org.ei.ziggy.*;
+import org.ei.ziggy.activity.HomeActivity;
 
 public class HomeActivityTest extends ActivityInstrumentationTestCase2<HomeActivity> {
     public HomeActivityTest() {
