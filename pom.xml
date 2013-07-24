@@ -16,7 +16,16 @@
     <properties>
         <platform.version>2.3.3</platform.version>
         <android.plugin.version>3.6.0</android.plugin.version>
+        <main.basedir>${project.basedir}</main.basedir>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>ziggy.local</id>
+            <name>ziggy</name>
+            <url>file:${main.basedir}/libs/</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
