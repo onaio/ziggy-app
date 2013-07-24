@@ -1,4 +1,4 @@
-package org.ei.ziggy.activity;
+package org.ei.ziggy.view.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -10,6 +10,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import org.ei.ziggy.ZiggyContext;
 import org.ei.ziggy.R;
+import org.ei.ziggy.view.controller.NavigationController;
 
 import static android.webkit.ConsoleMessage.MessageLevel.ERROR;
 import static java.text.MessageFormat.format;
@@ -71,6 +72,7 @@ public abstract class WebActivity extends Activity {
         webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webView.addJavascriptInterface(new NavigationController(this), "navigationContext");
         webView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
