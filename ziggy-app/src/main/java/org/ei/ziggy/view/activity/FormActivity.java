@@ -50,7 +50,7 @@ public class FormActivity extends WebActivity {
         webViewSettings.setJavaScriptEnabled(true);
         webViewSettings.setDatabaseEnabled(true);
         webViewSettings.setDomStorageEnabled(true);
-        webView.addJavascriptInterface(new FormWebInterface(model, form, this), ANDROID_CONTEXT_FIELD);
+        webView.addJavascriptInterface(new FormWebInterface(model, form), ANDROID_CONTEXT_FIELD);
         webView.addJavascriptInterface(ZiggyContext.getInstance().formDataRepository(), REPOSITORY);
         webView.addJavascriptInterface(ZiggyContext.getInstance().ziggyFileLoader(), ZIGGY_FILE_LOADER);
         webView.addJavascriptInterface(ZiggyContext.getInstance().formSubmissionRouter(), FORM_SUBMISSION_ROUTER);
