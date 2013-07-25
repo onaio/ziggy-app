@@ -4,8 +4,7 @@
         "default_bind_path": "/model/instance/village_profile/",
         "fields": [
             {
-                "name": "id",
-                "shouldLoadValue": true
+                "name": "id"
             },
             {
                 "name": "name",

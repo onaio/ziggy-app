@@ -31,7 +31,7 @@ public class FormDataRepository extends ZiggyRepository {
     private static final String SERVER_VERSION_COLUMN = "serverVersion";
     private static final String SYNC_STATUS_COLUMN = "syncStatus";
     private static final String FORM_SUBMISSION_TABLE_NAME = "form_submission";
-    public static final String[] FORM_SUBMISSION_TABLE_COLUMNS = new String[]{INSTANCE_ID_COLUMN, ENTITY_ID_COLUMN, FORM_NAME_COLUMN,
+    private static final String[] FORM_SUBMISSION_TABLE_COLUMNS = new String[]{INSTANCE_ID_COLUMN, ENTITY_ID_COLUMN, FORM_NAME_COLUMN,
             INSTANCE_COLUMN, VERSION_COLUMN, SERVER_VERSION_COLUMN, SYNC_STATUS_COLUMN};
     public static final String ID_COLUMN = "id";
     private static final String DETAILS_COLUMN_NAME = "details";

@@ -15,13 +15,12 @@ public class ZiggyContext {
     private Context applicationContext;
 
     private ZiggyFileLoader ziggyFileLoader;
-
-    private Repository repository;
     private Session session;
 
     private FormSubmissionRouter formSubmissionRouter;
     private VillageRegistrationHandler villageRegistrationHandler;
 
+    private Repository repository;
     private FormDataRepository formDataRepository;
     private VillageRepository villageRepository;
 
@@ -34,7 +33,7 @@ public class ZiggyContext {
 
     private Repository initRepository() {
         if (repository == null) {
-            repository = new Repository(this.applicationContext, session(), villageRepository(), formDataRepository());
+            repository = new Repository(this.applicationContext, session().setPassword("Password"), villageRepository(), formDataRepository());
         }
         return repository;
     }
@@ -65,6 +64,7 @@ public class ZiggyContext {
     }
 
     public ZiggyFileLoader ziggyFileLoader() {
+        initRepository();
         if (ziggyFileLoader == null) {
             ziggyFileLoader = new ZiggyFileLoader("www/ziggy", "www/form", applicationContext.getAssets());
         }
