@@ -8,4 +8,5 @@ public class AllConstants {
     public static final String ZIGGY_FILE_LOADER = "ziggyFileLoader";
     public static final String FORM_SUBMISSION_ROUTER = "formSubmissionRouter";
     public static final String REPOSITORY = "formDataRepositoryContext";
+    public static final String ENTITY_ID_FIELD_NAME = "id";
 }

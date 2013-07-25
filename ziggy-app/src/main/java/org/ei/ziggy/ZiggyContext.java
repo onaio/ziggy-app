@@ -1,7 +1,11 @@
 package org.ei.ziggy;
 
 import android.content.Context;
+import org.ei.ziggy.repository.FormDataRepository;
+import org.ei.ziggy.repository.Repository;
+import org.ei.ziggy.repository.VillageRepository;
 import org.ei.ziggy.service.ZiggyFileLoader;
+import org.ei.ziggy.util.Session;
 
 public class ZiggyContext {
     private static ZiggyContext ziggyContext;
@@ -10,6 +14,11 @@ public class ZiggyContext {
 
     private ZiggyFileLoader ziggyFileLoader;
 
+    private Repository repository;
+    private Session session;
+    private FormDataRepository formDataRepository;
+    private VillageRepository villageRepository;
+
     public static ZiggyContext getInstance() {
         if (ziggyContext == null) {
             ziggyContext = new ZiggyContext();
@@ -17,12 +26,36 @@ public class ZiggyContext {
         return ziggyContext;
     }
 
-    public void updateApplicationContext(Context applicationContext) {
-        this.applicationContext = applicationContext;
+    private Repository initRepository() {
+        if (repository == null) {
+            repository = new Repository(this.applicationContext, session(), villageRepository(), formDataRepository());
+        }
+        return repository;
     }
 
-    public Object formDataRepository() {
-        throw new RuntimeException("Not implemented.");
+    private Session session() {
+        if (session == null) {
+            session = new Session();
+        }
+        return session;
+    }
+
+    private VillageRepository villageRepository() {
+        if (villageRepository == null) {
+            villageRepository = new VillageRepository();
+        }
+        return villageRepository;
+    }
+
+    public FormDataRepository formDataRepository() {
+        if (formDataRepository == null) {
+            formDataRepository = new FormDataRepository();
+        }
+        return formDataRepository;
+    }
+
+    public void updateApplicationContext(Context applicationContext) {
+        this.applicationContext = applicationContext;
     }
 
     public ZiggyFileLoader ziggyFileLoader() {
