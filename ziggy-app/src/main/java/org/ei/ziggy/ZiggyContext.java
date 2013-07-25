@@ -4,6 +4,8 @@ import android.content.Context;
 import org.ei.ziggy.repository.FormDataRepository;
 import org.ei.ziggy.repository.Repository;
 import org.ei.ziggy.repository.VillageRepository;
+import org.ei.ziggy.service.FormSubmissionRouter;
+import org.ei.ziggy.service.VillageRegistrationHandler;
 import org.ei.ziggy.service.ZiggyFileLoader;
 import org.ei.ziggy.util.Session;
 
@@ -16,6 +18,10 @@ public class ZiggyContext {
 
     private Repository repository;
     private Session session;
+
+    private FormSubmissionRouter formSubmissionRouter;
+    private VillageRegistrationHandler villageRegistrationHandler;
+
     private FormDataRepository formDataRepository;
     private VillageRepository villageRepository;
 
@@ -65,7 +71,18 @@ public class ZiggyContext {
         return ziggyFileLoader;
     }
 
-    public Object formSubmissionRouter() {
-        throw new RuntimeException("Not implemented.");
+    public FormSubmissionRouter formSubmissionRouter() {
+        initRepository();
+        if (formSubmissionRouter == null) {
+            formSubmissionRouter = new FormSubmissionRouter(formDataRepository(), villageRegistrationHandler());
+        }
+        return formSubmissionRouter;
+    }
+
+    private VillageRegistrationHandler villageRegistrationHandler() {
+        if (villageRegistrationHandler == null) {
+            villageRegistrationHandler = new VillageRegistrationHandler();
+        }
+        return villageRegistrationHandler;
     }
 }
