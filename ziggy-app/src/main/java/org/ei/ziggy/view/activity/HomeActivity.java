@@ -1,8 +1,8 @@
 package org.ei.ziggy.view.activity;
 
-public class HomeActivity extends WebActivity {
+public class HomeActivity extends WebFormActivity {
     @Override
-    protected void onCreation() {
+    protected void onInitialization() {
         webView.loadUrl("file:///android_asset/www/home.html");
     }
 }

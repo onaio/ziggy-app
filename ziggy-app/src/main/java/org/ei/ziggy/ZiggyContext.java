@@ -17,4 +17,16 @@ public class ZiggyContext {
     public void updateApplicationContext(Context applicationContext) {
         this.applicationContext = applicationContext;
     }
+
+    public Object formDataRepository() {
+        throw new RuntimeException("Not implemented.");
+    }
+
+    public Object ziggyFileLoader() {
+        throw new RuntimeException("Not implemented.");
+    }
+
+    public Object formSubmissionRouter() {
+        throw new RuntimeException("Not implemented.");
+    }
 }
