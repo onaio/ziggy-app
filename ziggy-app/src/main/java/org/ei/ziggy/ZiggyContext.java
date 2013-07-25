@@ -1,11 +1,14 @@
 package org.ei.ziggy;
 
 import android.content.Context;
+import org.ei.ziggy.service.ZiggyFileLoader;
 
 public class ZiggyContext {
     private static ZiggyContext ziggyContext;
 
     private Context applicationContext;
+
+    private ZiggyFileLoader ziggyFileLoader;
 
     public static ZiggyContext getInstance() {
         if (ziggyContext == null) {
@@ -22,8 +25,11 @@ public class ZiggyContext {
         throw new RuntimeException("Not implemented.");
     }
 
-    public Object ziggyFileLoader() {
-        throw new RuntimeException("Not implemented.");
+    public ZiggyFileLoader ziggyFileLoader() {
+        if (ziggyFileLoader == null) {
+            ziggyFileLoader = new ZiggyFileLoader("www/ziggy", "www/form", applicationContext.getAssets());
+        }
+        return ziggyFileLoader;
     }
 
     public Object formSubmissionRouter() {
