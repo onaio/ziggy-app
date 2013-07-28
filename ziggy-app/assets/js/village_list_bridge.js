@@ -16,10 +16,12 @@ function FakeVillageListContext() {
         get: function () {
             return JSON.stringify([
                 {
+                    "entityId": "1",
                     "name": "Bherya",
                     "code": "0001"
                 },
                 {
+                    "entityId": "2",
                     "name": "Munjanahalli",
                     "code": "0002"
                 }

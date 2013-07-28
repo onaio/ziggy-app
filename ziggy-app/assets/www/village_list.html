@@ -4,6 +4,9 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
     <script src="../js/lib/angular.min.js" type="text/javascript"></script>
+    <script src="../js/form_context.js" type="text/javascript"></script>
+    <script src="../js/navigation_context.js" type="text/javascript"></script>
+    <script src="../js/ziggy_view_controller.js" type="text/javascript"></script>
     <script src="../js/village_list_bridge.js" type="text/javascript"></script>
     <script src="../js/village_list_controller.js" type="text/javascript"></script>
     <meta name="viewport"
@@ -11,7 +14,7 @@
           charset="UTF-8">
 </head>
 <body ng-controller="villageListController">
-<div class="container-fluid margin-container">
+<div class="container-fluid margin-container" ng-controller="ziggyViewController">
     <div class="row-fluid">
         <div class="span12 alert alert-success status">
             <h2>Villages</h2>
@@ -26,7 +29,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="village in villages">
+            <tr ng-repeat="village in villages" ng-click="openForm('cc_monthly_report', village.entityId);">
                 <td>{{village.name}}</td>
                 <td>{{village.code}}</td>
             </tr>
