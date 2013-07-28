@@ -1,18 +1,13 @@
 body {
-    background-color: #2c2c2c;
     font-family: sans-serif;
 }
 
-.status-container {
+.margin-container {
     margin-top: 50px;
 }
 
 .status {
     text-align: center;
-}
-
-.entity {
-    color: white;
 }
 
 .navigation-button {
