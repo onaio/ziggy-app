@@ -19,13 +19,14 @@ import static org.ei.ziggy.util.Log.logError;
 
 public abstract class WebActivity extends Activity {
     protected WebView webView;
+    protected ZiggyContext context;
     private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ZiggyContext.getInstance().updateApplicationContext(this.getApplicationContext());
+        context = ZiggyContext.getInstance().updateApplicationContext(this.getApplicationContext());
 
         setContentView(R.layout.web);
 

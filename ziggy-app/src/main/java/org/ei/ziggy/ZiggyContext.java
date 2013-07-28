@@ -1,6 +1,7 @@
 package org.ei.ziggy;
 
 import android.content.Context;
+import org.ei.ziggy.repository.AllVillages;
 import org.ei.ziggy.repository.FormDataRepository;
 import org.ei.ziggy.repository.Repository;
 import org.ei.ziggy.repository.VillageRepository;
@@ -23,6 +24,8 @@ public class ZiggyContext {
     private Repository repository;
     private FormDataRepository formDataRepository;
     private VillageRepository villageRepository;
+
+    private AllVillages allVillages;
 
     public static ZiggyContext getInstance() {
         if (ziggyContext == null) {
@@ -59,8 +62,9 @@ public class ZiggyContext {
         return formDataRepository;
     }
 
-    public void updateApplicationContext(Context applicationContext) {
+    public ZiggyContext updateApplicationContext(Context applicationContext) {
         this.applicationContext = applicationContext;
+        return this;
     }
 
     public ZiggyFileLoader ziggyFileLoader() {
@@ -84,5 +88,13 @@ public class ZiggyContext {
             villageRegistrationHandler = new VillageRegistrationHandler();
         }
         return villageRegistrationHandler;
+    }
+
+    public AllVillages allVillages() {
+        initRepository();
+        if (allVillages == null) {
+            allVillages = new AllVillages(villageRepository());
+        }
+        return allVillages;
     }
 }
