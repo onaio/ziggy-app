@@ -5,6 +5,7 @@
     <link href="../css/home.css" rel="stylesheet">
     <script src="../js/lib/angular.min.js" type="text/javascript"></script>
     <script src="../js/form_context.js" type="text/javascript"></script>
+    <script src="../js/navigation_context.js" type="text/javascript"></script>
     <script src="../js/ziggy_view_controller.js" type="text/javascript"></script>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -20,9 +21,8 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="well">
-                <div class="btn btn-info navigation-button" ng-click="openForm('village_profile', '');">Register entity</div>
-                <div class="btn btn-info navigation-button">View entities
-                </div>
+                <div class="btn btn-info navigation-button" ng-click="openForm('village_profile', '');">Register village</div>
+                <div class="btn btn-info navigation-button" ng-click="openVillageList();">Village list</div>
             </div>
         </div>
     </div>

@@ -26,6 +26,11 @@
                 android:theme="@android:style/Theme.NoTitleBar"
                 android:screenOrientation="portrait">
         </activity>
+        <activity
+                android:name=".view.activity.VillageListActivity"
+                android:theme="@android:style/Theme.NoTitleBar"
+                android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>
