@@ -7,6 +7,6 @@ function ziggyViewController($scope) {
     };
 
     $scope.openVillageList = function () {
-            $scope.navigationBridge.delegateToVillageListView();
+        $scope.navigationBridge.delegateToVillageListView();
     };
 }

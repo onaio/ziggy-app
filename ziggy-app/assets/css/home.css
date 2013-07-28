@@ -11,6 +11,10 @@ body {
     text-align: center;
 }
 
+.entity {
+    color: white;
+}
+
 .navigation-button {
     margin-left: auto;
     margin-right: auto;
