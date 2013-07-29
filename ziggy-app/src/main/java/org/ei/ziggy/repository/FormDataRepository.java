@@ -50,12 +50,7 @@ public class FormDataRepository extends ZiggyRepository {
 
     public String queryUniqueResult(String sql) {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
-        Cursor cursor;
-        try {
-            cursor = database.rawQuery(sql, new String[]{});
-        } catch (Exception e) {
-            return "{}";
-        }
+        Cursor cursor = database.rawQuery(sql, new String[]{});
 
         cursor.moveToFirst();
         Map<String, String> result = readARow(cursor);
