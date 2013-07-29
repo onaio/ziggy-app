@@ -9,7 +9,7 @@
             },
             {
                 "name": "name",
-                "bind": "/model/instance/cc_monthly_report_form/village",
+                "bind": "/model/instance/cc_monthly_report_form/village_name",
                 "shouldLoadValue": true
             },
             {
