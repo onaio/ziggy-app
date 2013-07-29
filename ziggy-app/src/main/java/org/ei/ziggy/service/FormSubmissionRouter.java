@@ -1,12 +1,14 @@
 package org.ei.ziggy.service;
 
 import org.ei.ziggy.domain.form.FormSubmission;
+import org.ei.ziggy.event.Event;
 import org.ei.ziggy.repository.FormDataRepository;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.ei.ziggy.AllConstants.FormNames.VILLAGE_REGISTRATION;
+import static org.ei.ziggy.event.Event.FORM_SUBMITTED;
 import static org.ei.ziggy.util.Log.logWarn;
 
 public class FormSubmissionRouter {
@@ -28,5 +30,6 @@ public class FormSubmissionRouter {
         } else {
             handler.handle(submission);
         }
+        FORM_SUBMITTED.notifyListeners(instanceId);
     }
 }

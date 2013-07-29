@@ -6,4 +6,11 @@ function villageListController($scope) {
     };
 
     $scope.villages = $scope.getVillages();
+
+    pageView.onReload(function () {
+        $scope.$apply(function () {
+            $scope.villages = $scope.getVillages();
+        });
+    });
+
 }
