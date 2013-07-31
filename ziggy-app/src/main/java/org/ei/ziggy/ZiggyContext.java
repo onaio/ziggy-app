@@ -1,10 +1,7 @@
 package org.ei.ziggy;
 
 import android.content.Context;
-import org.ei.ziggy.repository.AllVillages;
-import org.ei.ziggy.repository.FormDataRepository;
-import org.ei.ziggy.repository.Repository;
-import org.ei.ziggy.repository.VillageRepository;
+import org.ei.ziggy.repository.*;
 import org.ei.ziggy.service.FormSubmissionRouter;
 import org.ei.ziggy.service.VillageRegistrationHandler;
 import org.ei.ziggy.service.ZiggyFileLoader;
@@ -22,8 +19,9 @@ public class ZiggyContext {
     private VillageRegistrationHandler villageRegistrationHandler;
 
     private Repository repository;
-    private FormDataRepository formDataRepository;
+    private SettingsRepository settingRepository;
     private VillageRepository villageRepository;
+    private FormDataRepository formDataRepository;
 
     private AllVillages allVillages;
 
@@ -36,7 +34,10 @@ public class ZiggyContext {
 
     private Repository initRepository() {
         if (repository == null) {
-            repository = new Repository(this.applicationContext, session().setPassword("Password"), villageRepository(), formDataRepository());
+            repository = new Repository(this.applicationContext, session().setPassword("Password"),
+                    settingRepository(),
+                    villageRepository(),
+                    formDataRepository());
         }
         return repository;
     }
@@ -46,6 +47,13 @@ public class ZiggyContext {
             session = new Session();
         }
         return session;
+    }
+
+    private SettingsRepository settingRepository() {
+        if (settingRepository == null) {
+            settingRepository = new SettingsRepository();
+        }
+        return settingRepository;
     }
 
     private VillageRepository villageRepository() {
