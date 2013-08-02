@@ -3,6 +3,9 @@ package org.ei.ziggy.view.activity;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
@@ -10,10 +13,15 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import org.ei.ziggy.ZiggyContext;
 import org.ei.ziggy.R;
+import org.ei.ziggy.domain.FetchStatus;
+import org.ei.ziggy.sync.AfterFetchListener;
+import org.ei.ziggy.sync.ProgressIndicator;
+import org.ei.ziggy.sync.UpdateTask;
 import org.ei.ziggy.view.controller.NavigationController;
 
 import static android.webkit.ConsoleMessage.MessageLevel.ERROR;
 import static java.text.MessageFormat.format;
+import static org.ei.ziggy.domain.FetchStatus.fetched;
 import static org.ei.ziggy.util.Log.logDebug;
 import static org.ei.ziggy.util.Log.logError;
 
@@ -34,6 +42,43 @@ public abstract class WebActivity extends Activity {
         webViewInitialization(this);
 
         onCreation();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.updateMenuItem:
+                updateFromServer();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    private void updateFromServer() {
+        UpdateTask updateTask = new UpdateTask(getApplicationContext(), context.formSubmissionSyncService(), new ProgressIndicator() {
+            @Override
+            public void setVisible() {
+            }
+
+            @Override
+            public void setInvisible() {
+            }
+        });
+
+        updateTask.updateFromServer(new AfterFetchListener() {
+            public void afterFetch(FetchStatus status) {
+                if (fetched.equals(status)) {
+                }
+            }
+        });
     }
 
     private void progressDialogInitialization() {

@@ -2,10 +2,10 @@ package org.ei.ziggy;
 
 import android.content.Context;
 import org.ei.ziggy.repository.*;
-import org.ei.ziggy.service.FormSubmissionRouter;
-import org.ei.ziggy.service.VillageRegistrationHandler;
-import org.ei.ziggy.service.ZiggyFileLoader;
+import org.ei.ziggy.service.*;
 import org.ei.ziggy.util.Session;
+
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class ZiggyContext {
     private static ZiggyContext ziggyContext;
@@ -19,11 +19,17 @@ public class ZiggyContext {
     private VillageRegistrationHandler villageRegistrationHandler;
 
     private Repository repository;
-    private SettingsRepository settingRepository;
+    private SettingsRepository settingsRepository;
     private VillageRepository villageRepository;
     private FormDataRepository formDataRepository;
 
     private AllVillages allVillages;
+    private AllSettings allSettings;
+
+    private FormSubmissionSyncService formSubmissionSyncService;
+    private HTTPAgent httpAgent;
+    private FormSubmissionService formSubmissionService;
+    private ZiggyService ziggyService;
 
     public static ZiggyContext getInstance() {
         if (ziggyContext == null) {
@@ -32,10 +38,14 @@ public class ZiggyContext {
         return ziggyContext;
     }
 
+    public static void setInstance(ZiggyContext context) {
+        ziggyContext = context;
+    }
+
     private Repository initRepository() {
         if (repository == null) {
             repository = new Repository(this.applicationContext, session().setPassword("Password"),
-                    settingRepository(),
+                    settingsRepository(),
                     villageRepository(),
                     formDataRepository());
         }
@@ -49,11 +59,11 @@ public class ZiggyContext {
         return session;
     }
 
-    private SettingsRepository settingRepository() {
-        if (settingRepository == null) {
-            settingRepository = new SettingsRepository();
+    private SettingsRepository settingsRepository() {
+        if (settingsRepository == null) {
+            settingsRepository = new SettingsRepository();
         }
-        return settingRepository;
+        return settingsRepository;
     }
 
     private VillageRepository villageRepository() {
@@ -104,5 +114,45 @@ public class ZiggyContext {
             allVillages = new AllVillages(villageRepository());
         }
         return allVillages;
+    }
+
+    private AllSettings allSettings() {
+        initRepository();
+        if (allSettings == null) {
+            allSettings = new AllSettings(getDefaultSharedPreferences(this.applicationContext), settingsRepository());
+        }
+        return allSettings;
+    }
+
+    public FormSubmissionSyncService formSubmissionSyncService() {
+        initRepository();
+        if (formSubmissionSyncService == null) {
+            formSubmissionSyncService = new FormSubmissionSyncService(
+                    formSubmissionService(), httpAgent(), formDataRepository(), allSettings());
+        }
+        return formSubmissionSyncService;
+    }
+
+    private FormSubmissionService formSubmissionService() {
+        initRepository();
+        if (formSubmissionService == null) {
+            formSubmissionService = new FormSubmissionService(ziggyService(), formDataRepository(), allSettings());
+        }
+        return formSubmissionService;
+    }
+
+    private ZiggyService ziggyService() {
+        initRepository();
+        if (ziggyService == null) {
+            ziggyService = new ZiggyService(ziggyFileLoader(), formDataRepository(), formSubmissionRouter());
+        }
+        return ziggyService;
+    }
+
+    private HTTPAgent httpAgent() {
+        if (httpAgent == null) {
+            httpAgent = new HTTPAgent();
+        }
+        return httpAgent;
     }
 }
