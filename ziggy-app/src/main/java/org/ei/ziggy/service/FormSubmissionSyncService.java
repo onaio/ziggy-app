@@ -44,7 +44,7 @@ public class FormSubmissionSyncService {
             return;
         }
         String jsonPayload = mapToFormSubmissionDTO(pendingFormSubmissions);
-        Response<String> response = httpAgent.post(SERVER_BASE_URL + FORM_SUBMISSIONS_PATH, jsonPayload);
+        Response<String> response = httpAgent.postJSONRequest(SERVER_BASE_URL + FORM_SUBMISSIONS_PATH, jsonPayload);
         if (response.isFailure()) {
             logError(format("Form submissions sync failed. Submissions:  {0}", pendingFormSubmissions));
             return;

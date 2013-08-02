@@ -30,6 +30,7 @@ public class ZiggyContext {
     private HTTPAgent httpAgent;
     private FormSubmissionService formSubmissionService;
     private ZiggyService ziggyService;
+    private UserService userService;
 
     public static ZiggyContext getInstance() {
         if (ziggyContext == null) {
@@ -44,7 +45,7 @@ public class ZiggyContext {
 
     private Repository initRepository() {
         if (repository == null) {
-            repository = new Repository(this.applicationContext, session().setPassword("Password"),
+            repository = new Repository(this.applicationContext, session(),
                     settingsRepository(),
                     villageRepository(),
                     formDataRepository());
@@ -150,9 +151,18 @@ public class ZiggyContext {
     }
 
     private HTTPAgent httpAgent() {
+        initRepository();
         if (httpAgent == null) {
-            httpAgent = new HTTPAgent();
+            httpAgent = new HTTPAgent(allSettings());
         }
         return httpAgent;
+    }
+
+    public UserService userService() {
+        initRepository();
+        if (userService == null) {
+            userService = new UserService(allSettings(), session());
+        }
+        return userService;
     }
 }

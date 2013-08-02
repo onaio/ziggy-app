@@ -58,20 +58,20 @@ public class FormSubmissionSyncServiceTest {
 
     @Test
     public void shouldPushPendingFormSubmissionsToServerAndMarkThemAsSynced() throws Exception {
-        when(httpAgent.post("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
+        when(httpAgent.postJSONRequest("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
                 .thenReturn(new Response<String>(success, null));
 
         service.pushToServer();
 
         inOrder(allSettings, httpAgent, repository);
         verify(allSettings).fetchRegisteredReporter();
-        verify(httpAgent).post("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto));
+        verify(httpAgent).postJSONRequest("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto));
         verify(repository).markFormSubmissionsAsSynced(submissions);
     }
 
     @Test
     public void shouldNotMarkPendingSubmissionsAsSyncedIfPostFails() throws Exception {
-        when(httpAgent.post("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
+        when(httpAgent.postJSONRequest("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
                 .thenReturn(new Response<String>(failure, null));
 
         service.pushToServer();
