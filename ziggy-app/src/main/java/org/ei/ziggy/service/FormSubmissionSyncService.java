@@ -73,7 +73,8 @@ public class FormSubmissionSyncService {
         List<FormSubmissionDTO> formSubmissions = new ArrayList<FormSubmissionDTO>();
         for (FormSubmission pendingFormSubmission : pendingFormSubmissions) {
             formSubmissions.add(new FormSubmissionDTO(allSettings.fetchRegisteredReporter(), pendingFormSubmission.instanceId(),
-                    pendingFormSubmission.entityId(), pendingFormSubmission.formName(), pendingFormSubmission.instance(), pendingFormSubmission.version()));
+                    pendingFormSubmission.entityId(), pendingFormSubmission.formName(), pendingFormSubmission.instance(), pendingFormSubmission.version(),
+                    pendingFormSubmission.formDataDefinitionVersion()));
         }
         return new Gson().toJson(formSubmissions);
     }

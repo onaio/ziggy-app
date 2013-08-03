@@ -49,9 +49,9 @@ public class FormSubmissionSyncServiceTest {
         service = new FormSubmissionSyncService(formSubmissionService, httpAgent, repository, allSettings);
 
         formInstanceJSON = "{form:{bind_type: 'village'}}";
-        submissions = asList(new FormSubmission("id 1", "entity id 1", "form name", formInstanceJSON, "123", PENDING));
+        submissions = asList(new FormSubmission("id 1", "entity id 1", "form name", formInstanceJSON, "123", PENDING, "1"));
         expectedFormSubmissionsDto = asList(new FormSubmissionDTO(
-                "reporter id 1", "id 1", "entity id 1", "form name", formInstanceJSON, "123"));
+                "reporter id 1", "id 1", "entity id 1", "form name", formInstanceJSON, "123", "1"));
         when(allSettings.fetchRegisteredReporter()).thenReturn("reporter id 1");
         when(repository.getPendingFormSubmissions()).thenReturn(submissions);
     }
@@ -94,7 +94,7 @@ public class FormSubmissionSyncServiceTest {
 
     @Test
     public void shouldPullFormSubmissionsFromServerAndDelegateToProcessing() throws Exception {
-        List<FormSubmission> expectedFormSubmissions = asList(new FormSubmission("id 1", "entity id 1", "form name", formInstanceJSON, "123", SYNCED));
+        List<FormSubmission> expectedFormSubmissions = asList(new FormSubmission("id 1", "entity id 1", "form name", formInstanceJSON, "123", SYNCED, "1"));
         when(allSettings.fetchPreviousFormSyncIndex()).thenReturn("122");
         when(httpAgent.fetch("http://formhub.org/form-submissions?reporter-id=reporter id 1&timestamp=122")).thenReturn(new Response<String>(success, new Gson().toJson(this.expectedFormSubmissionsDto)));
 

@@ -10,16 +10,18 @@ public class FormSubmissionDTO {
     private String entityId;
     private String formName;
     private String formInstance;
-    private String timeStamp;
+    private String clientVersion;
     private String serverVersion;
+    private String formDataDefinitionVersion;
 
-    public FormSubmissionDTO(String reporterId, String instanceId, String entityId, String formName, String formInstance, String timeStamp) {
+    public FormSubmissionDTO(String reporterId, String instanceId, String entityId, String formName, String formInstance, String clientVersion, String formDataDefinitionVersion) {
         this.reporterId = reporterId;
         this.instanceId = instanceId;
         this.entityId = entityId;
         this.formName = formName;
         this.formInstance = formInstance;
-        this.timeStamp = timeStamp;
+        this.clientVersion = clientVersion;
+        this.formDataDefinitionVersion = formDataDefinitionVersion;
     }
 
     public FormSubmissionDTO withServerVersion(String version) {
@@ -47,8 +49,12 @@ public class FormSubmissionDTO {
         return formInstance;
     }
 
-    public String timeStamp() {
-        return this.timeStamp;
+    public String clientVersion() {
+        return this.clientVersion;
+    }
+
+    public String formDataDefinitionVersion() {
+        return this.formDataDefinitionVersion;
     }
 
     public String serverVersion() {

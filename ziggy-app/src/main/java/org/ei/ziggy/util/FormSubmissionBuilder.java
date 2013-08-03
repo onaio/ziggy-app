@@ -11,13 +11,14 @@ public class FormSubmissionBuilder {
     private String version = "0";
     private SyncStatus syncStatus = SyncStatus.SYNCED;
     private String serverVersion = "0";
+    private String formDataDefinitionVersion = "0";
 
     public static FormSubmissionBuilder create() {
         return new FormSubmissionBuilder();
     }
 
     public FormSubmission build() {
-        return new FormSubmission(instanceId, entityId, formName, formInstance, version, serverVersion, syncStatus);
+        return new FormSubmission(instanceId, entityId, formName, formInstance, version, syncStatus, formDataDefinitionVersion, serverVersion);
     }
 
     public FormSubmissionBuilder withInstanceId(String instanceId) {
