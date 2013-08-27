@@ -7,10 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.ConsoleMessage;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
+import android.webkit.*;
 import org.ei.ziggy.ZiggyContext;
 import org.ei.ziggy.R;
 import org.ei.ziggy.domain.FetchStatus;
@@ -111,6 +108,10 @@ public abstract class WebActivity extends Activity {
                     logDebug(message);
                 }
                 return true;
+            }
+
+            public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+                callback.invoke(origin, true, false);
             }
         });
 
