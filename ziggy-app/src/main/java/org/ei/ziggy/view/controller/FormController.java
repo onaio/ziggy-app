@@ -9,7 +9,7 @@ public class FormController {
         this.activity = activity;
     }
 
-    public void startFormActivity(String formName, String entityId) {
-        activity.startFormActivity(formName, entityId);
+    public void startFormActivity(String formName, String entityId, String metadata) {
+        activity.startFormActivity(formName, entityId, metadata);
     }
 }

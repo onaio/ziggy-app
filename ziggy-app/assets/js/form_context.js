@@ -5,16 +5,16 @@ function FormBridge() {
     }
 
     return {
-        delegateToFormLaunchView: function (formName, entityId) {
-            return formContext.startFormActivity(formName, entityId);
+        delegateToFormLaunchView: function (formName, entityId, metadata) {
+            return formContext.startFormActivity(formName, entityId, metadata);
         }
     };
 }
 
 function FakeFormContext() {
     return {
-        startFormActivity: function (formName, entityId) {
-            alert("Launching form: " + formName + ", for entityId: '" + entityId + "'");
+        startFormActivity: function (formName, entityId, metadata) {
+            alert("Launching form: " + formName + ", for entityId: '" + entityId + ", with metadata: '" + metadata + "'");
         }
     }
 }
