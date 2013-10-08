@@ -95,6 +95,7 @@ public class FormDataRepository extends ZiggyRepository {
     public List<FormSubmission> getPendingFormSubmissions() {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.query(FORM_SUBMISSION_TABLE_NAME, FORM_SUBMISSION_TABLE_COLUMNS, SYNC_STATUS_COLUMN + " = ?", new String[]{PENDING.value()}, null, null, null);
+        //Cursor cursor = database.query(FORM_SUBMISSION_TABLE_NAME, FORM_SUBMISSION_TABLE_COLUMNS, null, new String[]{}, null, null, null);
         return readFormSubmission(cursor);
     }
 

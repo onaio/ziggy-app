@@ -10,7 +10,7 @@ public class AllConstants {
     public static final String REPOSITORY = "formDataRepositoryContext";
     public static final String ENTITY_ID_FIELD_NAME = "id";
     public static final String VERSION_PARAM = "version";
-    public static final String SERVER_BASE_URL = "http://formhub.org";
+    public static final String SERVER_BASE_URL = "http://ziggy.ona.io/clts";
 
     public static final String IS_SYNC_IN_PROGRESS_PREFERENCE_KEY = "isSyncInProgress";
 
