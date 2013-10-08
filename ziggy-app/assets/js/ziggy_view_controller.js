@@ -2,11 +2,11 @@ function ziggyViewController($scope) {
     $scope.formBridge = new FormBridge();
     $scope.navigationBridge = new NavigationBridge();
 
-    $scope.openForm = function (formName, entityId, metaData) {
-        if (!metaData) {
-            metaData = {};
+    $scope.openForm = function (formName, entityId, metadata) {
+        if (!metadata) {
+            metadata = {};
         }
-        $scope.formBridge.delegateToFormLaunchView(formName, entityId, JSON.stringify(metaData));
+        $scope.formBridge.delegateToFormLaunchView(formName, entityId, JSON.stringify(metadata));
     };
 
     $scope.openFormWithFieldOverrides = function (formName, entityId, fields) {

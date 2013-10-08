@@ -32,7 +32,7 @@ public abstract class WebActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         context = ZiggyContext.getInstance().updateApplicationContext(this.getApplicationContext());
-        context.userService().initUser("c", "1"); //Hard coded for Dristhi
+        context.userService().initUser("clts", "1"); //Hard coded for Dristhi
         setContentView(R.layout.web);
 
         progressDialogInitialization();
