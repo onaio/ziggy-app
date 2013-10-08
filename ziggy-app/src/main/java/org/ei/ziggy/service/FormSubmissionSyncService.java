@@ -18,6 +18,7 @@ import static org.ei.ziggy.convertor.FormSubmissionConvertor.toDomain;
 import static org.ei.ziggy.domain.FetchStatus.*;
 import static org.ei.ziggy.util.Log.logError;
 import static org.ei.ziggy.util.Log.logInfo;
+import static org.ei.ziggy.util.Log.logWarn;
 
 public class FormSubmissionSyncService {
     public static final String FORM_SUBMISSIONS_PATH = "/form-submissions";
@@ -40,7 +41,9 @@ public class FormSubmissionSyncService {
 
     public void pushToServer() {
         List<FormSubmission> pendingFormSubmissions = formDataRepository.getPendingFormSubmissions();
+        logInfo(format("Number of pending submissions: {0}", pendingFormSubmissions.size()));
         if (pendingFormSubmissions.isEmpty()) {
+            logWarn("Pending submission list is empty");
             return;
         }
         String jsonPayload = mapToFormSubmissionDTO(pendingFormSubmissions);

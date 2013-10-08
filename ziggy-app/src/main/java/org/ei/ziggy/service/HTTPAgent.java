@@ -1,5 +1,6 @@
 package org.ei.ziggy.service;
 
+import static java.text.MessageFormat.format;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
@@ -14,6 +15,7 @@ import org.ei.ziggy.domain.Response;
 import org.ei.ziggy.domain.ResponseStatus;
 import org.ei.ziggy.repository.AllSettings;
 
+import static org.ei.ziggy.util.Log.logInfo;
 import static org.ei.ziggy.util.Log.logWarn;
 
 public class HTTPAgent {
@@ -40,6 +42,7 @@ public class HTTPAgent {
 
     public Response<String> postJSONRequest(String uri, String json) {
         try {
+            logInfo("Posting submissions");
             setCredentials(allSettings.fetchRegisteredReporter(), allSettings.fetchReporterPassword());
             HttpPost httpPost = new HttpPost(uri);
             StringEntity entity = new StringEntity(json);
@@ -48,6 +51,7 @@ public class HTTPAgent {
             httpPost.setHeader(HTTP.CONTENT_TYPE, "application/json");
 
             HttpResponse response = httpClient.execute(httpPost);
+            logInfo(format("Done posting submissions, response status code: {0}", response.getStatusLine()));
             String responseContent = IOUtils.toString(response.getEntity().getContent());
             return new Response<String>(ResponseStatus.success, responseContent);
         } catch (Exception e) {
