@@ -1,3 +1,0 @@
-[submodule "ziggy-app/assets/clts"]
-	path = ziggy-app/assets/clts
-	url = git@github.com:praekelt/clts-app.git
