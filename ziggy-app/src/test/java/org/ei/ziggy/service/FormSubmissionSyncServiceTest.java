@@ -58,20 +58,20 @@ public class FormSubmissionSyncServiceTest {
 
     @Test
     public void shouldPushPendingFormSubmissionsToServerAndMarkThemAsSynced() throws Exception {
-        when(httpAgent.postJSONRequest("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
+        when(httpAgent.postJSONRequest("http://ziggy.ona.io/clts" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
                 .thenReturn(new Response<String>(success, null));
 
         service.pushToServer();
 
         inOrder(allSettings, httpAgent, repository);
         verify(allSettings).fetchRegisteredReporter();
-        verify(httpAgent).postJSONRequest("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto));
+        verify(httpAgent).postJSONRequest("http://ziggy.ona.io/clts" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto));
         verify(repository).markFormSubmissionsAsSynced(submissions);
     }
 
     @Test
     public void shouldNotMarkPendingSubmissionsAsSyncedIfPostFails() throws Exception {
-        when(httpAgent.postJSONRequest("http://formhub.org" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
+        when(httpAgent.postJSONRequest("http://ziggy.ona.io/clts" + "/form-submissions", new Gson().toJson(expectedFormSubmissionsDto)))
                 .thenReturn(new Response<String>(failure, null));
 
         service.pushToServer();
@@ -96,31 +96,31 @@ public class FormSubmissionSyncServiceTest {
     public void shouldPullFormSubmissionsFromServerAndDelegateToProcessing() throws Exception {
         List<FormSubmission> expectedFormSubmissions = asList(new FormSubmission("id 1", "entity id 1", "form name", formInstanceJSON, "123", SYNCED, "1"));
         when(allSettings.fetchPreviousFormSyncIndex()).thenReturn("122");
-        when(httpAgent.fetch("http://formhub.org/form-submissions?reporter-id=reporter id 1&timestamp=122")).thenReturn(new Response<String>(success, new Gson().toJson(this.expectedFormSubmissionsDto)));
+        when(httpAgent.fetch("http://ziggy.ona.io/clts/form-submissions?reporter-id=reporter id 1&timestamp=122")).thenReturn(new Response<String>(success, new Gson().toJson(this.expectedFormSubmissionsDto)));
 
         FetchStatus fetchStatus = service.pullFromServer();
 
         assertEquals(fetched, fetchStatus);
-        verify(httpAgent).fetch("http://formhub.org/form-submissions?reporter-id=reporter id 1&timestamp=122");
+        verify(httpAgent).fetch("http://ziggy.ona.io/clts/form-submissions?reporter-id=reporter id 1&timestamp=122");
         verify(formSubmissionService).processSubmissions(expectedFormSubmissions);
     }
 
     @Test
     public void shouldReturnNothingFetchedStatusWhenNoFormSubmissionsAreGotFromServer() throws Exception {
         when(allSettings.fetchPreviousFormSyncIndex()).thenReturn("122");
-        when(httpAgent.fetch("http://formhub.org/form-submissions?reporter-id=reporter id 1&timestamp=122")).thenReturn(new Response<String>(success, new Gson().toJson(Collections.emptyList())));
+        when(httpAgent.fetch("http://ziggy.ona.io/clts/form-submissions?reporter-id=reporter id 1&timestamp=122")).thenReturn(new Response<String>(success, new Gson().toJson(Collections.emptyList())));
 
         FetchStatus fetchStatus = service.pullFromServer();
 
         assertEquals(nothingFetched, fetchStatus);
-        verify(httpAgent).fetch("http://formhub.org/form-submissions?reporter-id=reporter id 1&timestamp=122");
+        verify(httpAgent).fetch("http://ziggy.ona.io/clts/form-submissions?reporter-id=reporter id 1&timestamp=122");
         verifyZeroInteractions(formSubmissionService);
     }
 
     @Test
     public void shouldNotDelegateToProcessingIfPullFails() throws Exception {
         when(allSettings.fetchPreviousFormSyncIndex()).thenReturn("122");
-        when(httpAgent.fetch("http://formhub.org/form-submissions?reporter-id=reporter id 1&timestamp=122")).thenReturn(new Response<String>(failure, null));
+        when(httpAgent.fetch("http://ziggy.ona.io/clts/form-submissions?reporter-id=reporter id 1&timestamp=122")).thenReturn(new Response<String>(failure, null));
 
         FetchStatus fetchStatus = service.pullFromServer();
 
