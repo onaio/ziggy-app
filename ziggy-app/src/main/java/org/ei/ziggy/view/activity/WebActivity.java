@@ -126,6 +126,9 @@ public abstract class WebActivity extends Activity {
                 return true;
             }
         });
+
+        // enable localStorage
+        webView.getSettings().setDomStorageEnabled(true);
     }
 
     protected abstract void onCreation();
