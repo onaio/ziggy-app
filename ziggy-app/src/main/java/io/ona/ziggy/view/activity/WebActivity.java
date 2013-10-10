@@ -118,6 +118,17 @@ public abstract class WebActivity extends Activity {
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         webView.getSettings().setJavaScriptEnabled(true);
+        
+        webView.getSettings().setDatabasePath("/data/data/" + this.getPackageName() + "/databases/");
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setAppCacheMaxSize(1024*1024*20);
+        webView.getSettings().setAppCachePath("/data/data/" + this.getPackageName() + "/cache/");
+        webView.getSettings().setAllowFileAccess(true);
+        webView.getSettings().setAppCacheEnabled(true);
+
+
+
+
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         webView.addJavascriptInterface(new NavigationController(this), "navigationContext");
         webView.setOnLongClickListener(new View.OnLongClickListener() {
