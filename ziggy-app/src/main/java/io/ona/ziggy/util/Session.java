@@ -1,4 +1,4 @@
-package org.ei.ziggy.util;
+package io.ona.ziggy.util;
 
 public class Session {
     private String password;

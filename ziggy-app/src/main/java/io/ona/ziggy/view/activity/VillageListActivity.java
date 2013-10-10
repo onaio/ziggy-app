@@ -1,9 +1,9 @@
-package org.ei.ziggy.view.activity;
+package io.ona.ziggy.view.activity;
 
-import org.ei.ziggy.event.Listener;
-import org.ei.ziggy.view.controller.VillageListController;
+import io.ona.ziggy.event.Listener;
+import io.ona.ziggy.view.controller.VillageListController;
 
-import static org.ei.ziggy.event.Event.FORM_SUBMITTED;
+import static io.ona.ziggy.event.Event.FORM_SUBMITTED;
 
 public class VillageListActivity extends WebFormActivity {
     private Listener<String> formSubmittedListener;

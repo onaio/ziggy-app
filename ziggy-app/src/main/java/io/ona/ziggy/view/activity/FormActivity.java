@@ -1,4 +1,4 @@
-package org.ei.ziggy.view.activity;
+package io.ona.ziggy.view.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.webkit.WebSettings;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.ei.ziggy.ZiggyContext;
+import io.ona.ziggy.ZiggyContext;
 
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
 
 import static java.util.UUID.randomUUID;
-import static org.ei.ziggy.AllConstants.*;
-import static org.ei.ziggy.R.string.*;
-import static org.ei.ziggy.util.Log.logError;
+import static io.ona.ziggy.AllConstants.*;
+import static io.ona.ziggy.R.string.*;
+import static io.ona.ziggy.util.Log.logError;
 
 public class FormActivity extends WebActivity {
     public static final String ANDROID_CONTEXT_FIELD = "androidContext";

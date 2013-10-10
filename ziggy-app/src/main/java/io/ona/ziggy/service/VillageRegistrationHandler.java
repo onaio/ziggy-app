@@ -1,6 +1,6 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
-import org.ei.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.domain.form.FormSubmission;
 
 public class VillageRegistrationHandler implements FormSubmissionHandler {
     @Override

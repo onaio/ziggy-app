@@ -1,4 +1,4 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;

@@ -1,16 +1,16 @@
-package org.ei.ziggy.view.activity;
+package io.ona.ziggy.view.activity;
 
 import android.content.Intent;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.ei.ziggy.AllConstants;
-import org.ei.ziggy.view.controller.FormController;
+import io.ona.ziggy.AllConstants;
+import io.ona.ziggy.view.controller.FormController;
 
 import java.util.Map;
 
-import static org.ei.ziggy.AllConstants.ENTITY_ID_PARAM;
-import static org.ei.ziggy.AllConstants.FIELD_OVERRIDES_PARAM;
-import static org.ei.ziggy.AllConstants.FORM_NAME_PARAM;
+import static io.ona.ziggy.AllConstants.ENTITY_ID_PARAM;
+import static io.ona.ziggy.AllConstants.FIELD_OVERRIDES_PARAM;
+import static io.ona.ziggy.AllConstants.FORM_NAME_PARAM;
 
 public abstract class WebFormActivity extends WebActivity {
     @Override

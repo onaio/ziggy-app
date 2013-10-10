@@ -1,4 +1,4 @@
-package org.ei.ziggy.domain;
+package io.ona.ziggy.domain;
 
 public interface Displayable {
     String displayValue();

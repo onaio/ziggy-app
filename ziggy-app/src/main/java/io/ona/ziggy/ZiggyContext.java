@@ -1,9 +1,9 @@
-package org.ei.ziggy;
+package io.ona.ziggy;
 
 import android.content.Context;
-import org.ei.ziggy.repository.*;
-import org.ei.ziggy.service.*;
-import org.ei.ziggy.util.Session;
+import io.ona.ziggy.repository.*;
+import io.ona.ziggy.service.*;
+import io.ona.ziggy.util.Session;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 

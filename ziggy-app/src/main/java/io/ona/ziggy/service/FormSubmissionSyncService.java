@@ -1,24 +1,24 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.ei.ziggy.domain.FetchStatus;
-import org.ei.ziggy.domain.Response;
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.dto.FormSubmissionDTO;
-import org.ei.ziggy.repository.AllSettings;
-import org.ei.ziggy.repository.FormDataRepository;
+import io.ona.ziggy.domain.FetchStatus;
+import io.ona.ziggy.domain.Response;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.dto.FormSubmissionDTO;
+import io.ona.ziggy.repository.AllSettings;
+import io.ona.ziggy.repository.FormDataRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.text.MessageFormat.format;
-import static org.ei.ziggy.AllConstants.SERVER_BASE_URL;
-import static org.ei.ziggy.convertor.FormSubmissionConvertor.toDomain;
-import static org.ei.ziggy.domain.FetchStatus.*;
-import static org.ei.ziggy.util.Log.logError;
-import static org.ei.ziggy.util.Log.logInfo;
-import static org.ei.ziggy.util.Log.logWarn;
+import static io.ona.ziggy.AllConstants.SERVER_BASE_URL;
+import static io.ona.ziggy.convertor.FormSubmissionConvertor.toDomain;
+import static io.ona.ziggy.domain.FetchStatus.*;
+import static io.ona.ziggy.util.Log.logError;
+import static io.ona.ziggy.util.Log.logInfo;
+import static io.ona.ziggy.util.Log.logWarn;
 
 public class FormSubmissionSyncService {
     public static final String FORM_SUBMISSIONS_PATH = "/form-submissions";

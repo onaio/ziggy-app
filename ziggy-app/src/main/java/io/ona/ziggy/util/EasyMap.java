@@ -1,4 +1,4 @@
-package org.ei.ziggy.util;
+package io.ona.ziggy.util;
 
 import java.util.HashMap;
 import java.util.Map;

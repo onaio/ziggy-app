@@ -1,6 +1,6 @@
-package org.ei.ziggy.domain;
+package io.ona.ziggy.domain;
 
-import static org.ei.ziggy.domain.ResponseStatus.failure;
+import static io.ona.ziggy.domain.ResponseStatus.failure;
 
 public class Response<T> {
     private ResponseStatus status;

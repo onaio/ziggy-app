@@ -1,4 +1,4 @@
-package org.ei.ziggy.view.activity;
+package io.ona.ziggy.view.activity;
 
 import android.test.ActivityInstrumentationTestCase2;
 

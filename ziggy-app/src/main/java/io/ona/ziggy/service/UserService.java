@@ -1,7 +1,7 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
-import org.ei.ziggy.repository.AllSettings;
-import org.ei.ziggy.util.Session;
+import io.ona.ziggy.repository.AllSettings;
+import io.ona.ziggy.util.Session;
 
 public class UserService {
     private final AllSettings allSettings;

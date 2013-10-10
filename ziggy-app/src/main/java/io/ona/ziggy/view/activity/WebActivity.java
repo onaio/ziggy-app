@@ -1,4 +1,4 @@
-package org.ei.ziggy.view.activity;
+package io.ona.ziggy.view.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -8,19 +8,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.*;
-import org.ei.ziggy.ZiggyContext;
-import org.ei.ziggy.R;
-import org.ei.ziggy.domain.FetchStatus;
-import org.ei.ziggy.sync.AfterFetchListener;
-import org.ei.ziggy.sync.ProgressIndicator;
-import org.ei.ziggy.sync.UpdateTask;
-import org.ei.ziggy.view.controller.NavigationController;
+import io.ona.ziggy.ZiggyContext;
+import io.ona.ziggy.R;
+import io.ona.ziggy.domain.FetchStatus;
+import io.ona.ziggy.sync.AfterFetchListener;
+import io.ona.ziggy.sync.ProgressIndicator;
+import io.ona.ziggy.sync.UpdateTask;
+import io.ona.ziggy.view.controller.NavigationController;
 
 import static android.webkit.ConsoleMessage.MessageLevel.ERROR;
 import static java.text.MessageFormat.format;
-import static org.ei.ziggy.domain.FetchStatus.fetched;
-import static org.ei.ziggy.util.Log.logDebug;
-import static org.ei.ziggy.util.Log.logError;
+import static io.ona.ziggy.domain.FetchStatus.fetched;
+import static io.ona.ziggy.util.Log.logDebug;
+import static io.ona.ziggy.util.Log.logError;
 
 public abstract class WebActivity extends Activity {
     protected WebView webView;

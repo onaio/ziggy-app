@@ -1,13 +1,13 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
 import com.google.gson.Gson;
 import com.xtremelabs.robolectric.RobolectricTestRunner;
-import org.ei.ziggy.domain.FetchStatus;
-import org.ei.ziggy.domain.Response;
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.dto.FormSubmissionDTO;
-import org.ei.ziggy.repository.AllSettings;
-import org.ei.ziggy.repository.FormDataRepository;
+import io.ona.ziggy.domain.FetchStatus;
+import io.ona.ziggy.domain.Response;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.dto.FormSubmissionDTO;
+import io.ona.ziggy.repository.AllSettings;
+import io.ona.ziggy.repository.FormDataRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,12 +18,12 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 import static junit.framework.Assert.assertEquals;
-import static org.ei.ziggy.domain.FetchStatus.fetched;
-import static org.ei.ziggy.domain.FetchStatus.nothingFetched;
-import static org.ei.ziggy.domain.ResponseStatus.failure;
-import static org.ei.ziggy.domain.ResponseStatus.success;
-import static org.ei.ziggy.domain.SyncStatus.PENDING;
-import static org.ei.ziggy.domain.SyncStatus.SYNCED;
+import static io.ona.ziggy.domain.FetchStatus.fetched;
+import static io.ona.ziggy.domain.FetchStatus.nothingFetched;
+import static io.ona.ziggy.domain.ResponseStatus.failure;
+import static io.ona.ziggy.domain.ResponseStatus.success;
+import static io.ona.ziggy.domain.SyncStatus.PENDING;
+import static io.ona.ziggy.domain.SyncStatus.SYNCED;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
 

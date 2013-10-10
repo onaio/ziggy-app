@@ -1,7 +1,7 @@
-package org.ei.ziggy.util;
+package io.ona.ziggy.util;
 
-import org.ei.ziggy.domain.SyncStatus;
-import org.ei.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.domain.SyncStatus;
+import io.ona.ziggy.domain.form.FormSubmission;
 
 public class FormSubmissionBuilder {
     private String instanceId = "instance id 1";

@@ -1,9 +1,9 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.content.Context;
 import info.guardianproject.database.sqlcipher.SQLiteDatabase;
 import info.guardianproject.database.sqlcipher.SQLiteOpenHelper;
-import org.ei.ziggy.util.Session;
+import io.ona.ziggy.util.Session;
 
 import java.io.File;
 

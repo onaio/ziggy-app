@@ -1,4 +1,4 @@
-package org.ei.ziggy.dto;
+package io.ona.ziggy.dto;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

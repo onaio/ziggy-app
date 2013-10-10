@@ -1,4 +1,4 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
 import android.content.res.AssetManager;
 import org.apache.commons.io.IOUtils;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import static java.text.MessageFormat.format;
-import static org.ei.ziggy.util.Log.logError;
+import static io.ona.ziggy.util.Log.logError;
 
 public class ZiggyFileLoader {
     private String ziggyDirectoryPath;

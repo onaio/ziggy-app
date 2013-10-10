@@ -1,16 +1,16 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
 import com.google.gson.Gson;
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.repository.AllSettings;
-import org.ei.ziggy.repository.FormDataRepository;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.repository.AllSettings;
+import io.ona.ziggy.repository.FormDataRepository;
 
 import java.util.List;
 
 import static java.text.MessageFormat.format;
-import static org.ei.ziggy.AllConstants.*;
-import static org.ei.ziggy.util.EasyMap.create;
-import static org.ei.ziggy.util.Log.logError;
+import static io.ona.ziggy.AllConstants.*;
+import static io.ona.ziggy.util.EasyMap.create;
+import static io.ona.ziggy.util.Log.logError;
 
 public class FormSubmissionService {
     private ZiggyService ziggyService;

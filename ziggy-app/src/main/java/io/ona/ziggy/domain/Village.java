@@ -1,4 +1,4 @@
-package org.ei.ziggy.domain;
+package io.ona.ziggy.domain;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

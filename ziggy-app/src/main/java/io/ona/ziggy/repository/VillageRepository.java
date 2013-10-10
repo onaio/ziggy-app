@@ -1,11 +1,11 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import info.guardianproject.database.sqlcipher.SQLiteDatabase;
-import org.ei.ziggy.domain.Village;
+import io.ona.ziggy.domain.Village;
 
 import java.util.ArrayList;
 import java.util.List;

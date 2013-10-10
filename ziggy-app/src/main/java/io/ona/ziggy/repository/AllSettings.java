@@ -1,8 +1,8 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.content.SharedPreferences;
 
-import static org.ei.ziggy.AllConstants.IS_SYNC_IN_PROGRESS_PREFERENCE_KEY;
+import static io.ona.ziggy.AllConstants.IS_SYNC_IN_PROGRESS_PREFERENCE_KEY;
 
 public class AllSettings {
     public static final String PREVIOUS_FETCH_INDEX_SETTING_KEY = "previousFetchIndex";

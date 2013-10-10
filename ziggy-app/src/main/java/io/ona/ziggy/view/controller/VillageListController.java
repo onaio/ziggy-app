@@ -1,7 +1,7 @@
-package org.ei.ziggy.view.controller;
+package io.ona.ziggy.view.controller;
 
 import com.google.gson.Gson;
-import org.ei.ziggy.repository.AllVillages;
+import io.ona.ziggy.repository.AllVillages;
 
 public class VillageListController {
     private AllVillages allVillages;

@@ -1,15 +1,15 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.event.Event;
-import org.ei.ziggy.repository.FormDataRepository;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.event.Event;
+import io.ona.ziggy.repository.FormDataRepository;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.ei.ziggy.AllConstants.FormNames.VILLAGE_REGISTRATION;
-import static org.ei.ziggy.event.Event.FORM_SUBMITTED;
-import static org.ei.ziggy.util.Log.logWarn;
+import static io.ona.ziggy.AllConstants.FormNames.VILLAGE_REGISTRATION;
+import static io.ona.ziggy.event.Event.FORM_SUBMITTED;
+import static io.ona.ziggy.util.Log.logWarn;
 
 public class FormSubmissionRouter {
     private final Map<String, FormSubmissionHandler> handlerMap;

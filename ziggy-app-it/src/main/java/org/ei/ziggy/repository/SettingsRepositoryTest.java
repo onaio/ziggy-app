@@ -1,8 +1,8 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.test.AndroidTestCase;
 import android.test.RenamingDelegatingContext;
-import org.ei.ziggy.util.Session;
+import io.ona.ziggy.util.Session;
 
 import java.util.Arrays;
 import java.util.Date;

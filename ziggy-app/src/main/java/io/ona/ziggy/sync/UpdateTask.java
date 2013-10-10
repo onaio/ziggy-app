@@ -1,11 +1,11 @@
-package org.ei.ziggy.sync;
+package io.ona.ziggy.sync;
 
 import android.content.Context;
 import android.widget.Toast;
-import org.ei.ziggy.domain.FetchStatus;
-import org.ei.ziggy.service.FormSubmissionSyncService;
+import io.ona.ziggy.domain.FetchStatus;
+import io.ona.ziggy.service.FormSubmissionSyncService;
 
-import static org.ei.ziggy.domain.FetchStatus.nothingFetched;
+import static io.ona.ziggy.domain.FetchStatus.nothingFetched;
 
 public class UpdateTask {
     private final LockingBackgroundTask task;

@@ -1,10 +1,10 @@
-package org.ei.ziggy.sync;
+package io.ona.ziggy.sync;
 
 import android.os.AsyncTask;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-import static org.ei.ziggy.util.Log.logVerbose;
+import static io.ona.ziggy.util.Log.logVerbose;
 
 
 public class LockingBackgroundTask {

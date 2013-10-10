@@ -1,10 +1,10 @@
-package org.ei.ziggy.domain.form;
+package io.ona.ziggy.domain.form;
 
 import com.google.gson.Gson;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.ei.ziggy.domain.SyncStatus;
+import io.ona.ziggy.domain.SyncStatus;
 
 public class FormSubmission {
     private String instanceId;

@@ -1,6 +1,6 @@
-package org.ei.ziggy.sync;
+package io.ona.ziggy.sync;
 
-import org.ei.ziggy.domain.FetchStatus;
+import io.ona.ziggy.domain.FetchStatus;
 
 public interface AfterFetchListener {
     void afterFetch(FetchStatus fetchStatus);

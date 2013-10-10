@@ -1,4 +1,4 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
 import static java.text.MessageFormat.format;
 import org.apache.commons.io.IOUtils;
@@ -11,12 +11,12 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
-import org.ei.ziggy.domain.Response;
-import org.ei.ziggy.domain.ResponseStatus;
-import org.ei.ziggy.repository.AllSettings;
+import io.ona.ziggy.domain.Response;
+import io.ona.ziggy.domain.ResponseStatus;
+import io.ona.ziggy.repository.AllSettings;
 
-import static org.ei.ziggy.util.Log.logInfo;
-import static org.ei.ziggy.util.Log.logWarn;
+import static io.ona.ziggy.util.Log.logInfo;
+import static io.ona.ziggy.util.Log.logWarn;
 
 public class HTTPAgent {
     private final DefaultHttpClient httpClient;

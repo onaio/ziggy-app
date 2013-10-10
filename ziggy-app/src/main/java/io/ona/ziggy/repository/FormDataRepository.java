@@ -1,12 +1,12 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import info.guardianproject.database.sqlcipher.SQLiteDatabase;
-import org.ei.ziggy.domain.SyncStatus;
-import org.ei.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.domain.SyncStatus;
+import io.ona.ziggy.domain.form.FormSubmission;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,9 +16,9 @@ import java.util.Map;
 import static java.lang.System.currentTimeMillis;
 import static java.util.Arrays.asList;
 import static java.util.UUID.randomUUID;
-import static org.ei.ziggy.AllConstants.*;
-import static org.ei.ziggy.domain.SyncStatus.PENDING;
-import static org.ei.ziggy.domain.SyncStatus.SYNCED;
+import static io.ona.ziggy.AllConstants.*;
+import static io.ona.ziggy.domain.SyncStatus.PENDING;
+import static io.ona.ziggy.domain.SyncStatus.SYNCED;
 
 public class FormDataRepository extends ZiggyRepository {
     private static final String FORM_SUBMISSION_SQL = "CREATE TABLE form_submission(instanceId VARCHAR PRIMARY KEY, entityId VARCHAR, " +

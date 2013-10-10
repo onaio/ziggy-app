@@ -1,4 +1,4 @@
-package org.ei.ziggy.event;
+package io.ona.ziggy.event;
 
 import org.apache.commons.lang3.ObjectUtils;
 

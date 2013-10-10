@@ -1,6 +1,6 @@
-package org.ei.ziggy.view.controller;
+package io.ona.ziggy.view.controller;
 
-import org.ei.ziggy.view.activity.WebFormActivity;
+import io.ona.ziggy.view.activity.WebFormActivity;
 
 public class FormController {
     private WebFormActivity activity;

@@ -1,4 +1,4 @@
-package org.ei.ziggy.view.activity;
+package io.ona.ziggy.view.activity;
 
 public class HomeActivity extends WebFormActivity {
     @Override

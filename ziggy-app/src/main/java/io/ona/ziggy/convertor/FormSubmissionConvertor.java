@@ -1,12 +1,12 @@
-package org.ei.ziggy.convertor;
+package io.ona.ziggy.convertor;
 
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.dto.FormSubmissionDTO;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.dto.FormSubmissionDTO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.ei.ziggy.domain.SyncStatus.SYNCED;
+import static io.ona.ziggy.domain.SyncStatus.SYNCED;
 
 public class FormSubmissionConvertor {
     public static List<FormSubmission> toDomain(List<FormSubmissionDTO> formSubmissionsDto) {

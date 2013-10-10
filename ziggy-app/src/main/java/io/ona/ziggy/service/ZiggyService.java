@@ -1,6 +1,6 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
-import org.ei.ziggy.repository.FormDataRepository;
+import io.ona.ziggy.repository.FormDataRepository;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Function;
 import org.mozilla.javascript.ScriptableObject;
@@ -8,9 +8,9 @@ import org.mozilla.javascript.ScriptableObject;
 import java.util.Map;
 
 import static java.text.MessageFormat.format;
-import static org.ei.ziggy.AllConstants.*;
-import static org.ei.ziggy.util.Log.logError;
-import static org.ei.ziggy.util.Log.logInfo;
+import static io.ona.ziggy.AllConstants.*;
+import static io.ona.ziggy.util.Log.logError;
+import static io.ona.ziggy.util.Log.logInfo;
 import static org.mozilla.javascript.Context.*;
 
 public class ZiggyService {

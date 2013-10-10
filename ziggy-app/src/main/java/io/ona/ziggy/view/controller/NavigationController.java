@@ -1,8 +1,8 @@
-package org.ei.ziggy.view.controller;
+package io.ona.ziggy.view.controller;
 
 import android.app.Activity;
 import android.content.Intent;
-import org.ei.ziggy.view.activity.VillageListActivity;
+import io.ona.ziggy.view.activity.VillageListActivity;
 
 public class NavigationController {
     private Activity activity;

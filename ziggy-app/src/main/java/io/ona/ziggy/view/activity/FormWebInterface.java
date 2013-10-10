@@ -1,8 +1,8 @@
-package org.ei.ziggy.view.activity;
+package io.ona.ziggy.view.activity;
 
 import android.app.Activity;
 
-import static org.ei.ziggy.util.Log.logInfo;
+import static io.ona.ziggy.util.Log.logInfo;
 
 public class FormWebInterface {
     private final String model;

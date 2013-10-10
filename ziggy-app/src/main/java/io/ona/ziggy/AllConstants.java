@@ -1,4 +1,4 @@
-package org.ei.ziggy;
+package io.ona.ziggy;
 
 public class AllConstants {
     public static final String FORM_NAME_PARAM = "formName";

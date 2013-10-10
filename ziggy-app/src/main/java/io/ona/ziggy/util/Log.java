@@ -1,4 +1,4 @@
-package org.ei.ziggy.util;
+package io.ona.ziggy.util;
 
 import static android.util.Log.*;
 import static android.util.Log.e;

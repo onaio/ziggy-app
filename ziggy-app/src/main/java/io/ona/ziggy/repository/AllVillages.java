@@ -1,6 +1,6 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
-import org.ei.ziggy.domain.Village;
+import io.ona.ziggy.domain.Village;
 
 import java.util.List;
 

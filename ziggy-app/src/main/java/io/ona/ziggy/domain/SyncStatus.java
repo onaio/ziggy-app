@@ -1,4 +1,4 @@
-package org.ei.ziggy.domain;
+package io.ona.ziggy.domain;
 
 public enum SyncStatus {
     SYNCED("SYNCED"), PENDING("PENDING");

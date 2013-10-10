@@ -1,4 +1,4 @@
-package org.ei.ziggy.sync;
+package io.ona.ziggy.sync;
 
 public interface ProgressIndicator {
     void setVisible();
