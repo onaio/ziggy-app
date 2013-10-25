@@ -2,8 +2,8 @@ package org.ei.drishti.repository;
 
 import android.content.SharedPreferences;
 import com.xtremelabs.robolectric.RobolectricTestRunner;
-import org.ei.ziggy.repository.AllSettings;
-import org.ei.ziggy.repository.SettingsRepository;
+import io.ona.ziggy.repository.AllSettings;
+import io.ona.ziggy.repository.SettingsRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

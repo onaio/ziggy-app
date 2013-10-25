@@ -1,15 +1,15 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.test.AndroidTestCase;
 import android.test.RenamingDelegatingContext;
-import org.ei.ziggy.domain.Village;
-import org.ei.ziggy.util.Session;
+import io.ona.ziggy.domain.Village;
+import io.ona.ziggy.util.Session;
 
 import java.util.Date;
 import java.util.Map;
 
 import static java.util.Arrays.asList;
-import static org.ei.ziggy.util.EasyMap.mapOf;
+import static io.ona.ziggy.util.EasyMap.mapOf;
 
 public class VillageRepositoryTest extends AndroidTestCase {
     private VillageRepository repository;

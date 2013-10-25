@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ziggy</string>
+    <string name="app_name">CLTS</string>
     <string name="form_back_confirm_dialog_message">Are you sure you want to go back? All the data you have entered in
         this form will be cleared.
     </string>
