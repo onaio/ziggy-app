@@ -1,17 +1,17 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
 import com.xtremelabs.robolectric.RobolectricTestRunner;
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.event.Listener;
-import org.ei.ziggy.repository.FormDataRepository;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.event.Listener;
+import io.ona.ziggy.repository.FormDataRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 
-import static org.ei.ziggy.event.Event.FORM_SUBMITTED;
-import static org.ei.ziggy.util.FormSubmissionBuilder.create;
+import static io.ona.ziggy.event.Event.FORM_SUBMITTED;
+import static io.ona.ziggy.util.FormSubmissionBuilder.create;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
 

@@ -1,18 +1,18 @@
-package org.ei.ziggy.sync;
+package io.ona.ziggy.sync;
 
 import android.content.Context;
 import com.xtremelabs.robolectric.RobolectricTestRunner;
-import org.ei.ziggy.ZiggyContext;
-import org.ei.ziggy.domain.FetchStatus;
-import org.ei.ziggy.service.FormSubmissionSyncService;
+import io.ona.ziggy.ZiggyContext;
+import io.ona.ziggy.domain.FetchStatus;
+import io.ona.ziggy.service.FormSubmissionSyncService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 
-import static org.ei.ziggy.domain.FetchStatus.fetched;
-import static org.ei.ziggy.domain.FetchStatus.nothingFetched;
+import static io.ona.ziggy.domain.FetchStatus.fetched;
+import static io.ona.ziggy.domain.FetchStatus.nothingFetched;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;

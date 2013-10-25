@@ -1,9 +1,9 @@
-package org.ei.ziggy.service;
+package io.ona.ziggy.service;
 
 import com.google.gson.Gson;
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.repository.AllSettings;
-import org.ei.ziggy.repository.FormDataRepository;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.repository.AllSettings;
+import io.ona.ziggy.repository.FormDataRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InOrder;
@@ -12,8 +12,8 @@ import org.mockito.Mock;
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static org.ei.ziggy.util.EasyMap.create;
-import static org.ei.ziggy.util.FormSubmissionBuilder.create;
+import static io.ona.ziggy.util.EasyMap.create;
+import static io.ona.ziggy.util.FormSubmissionBuilder.create;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
 
