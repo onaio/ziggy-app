@@ -1,9 +1,9 @@
-package org.ei.ziggy.view.controller;
+package io.ona.ziggy.view.controller;
 
 import com.google.gson.Gson;
 import com.xtremelabs.robolectric.RobolectricTestRunner;
-import org.ei.ziggy.domain.Village;
-import org.ei.ziggy.repository.AllVillages;
+import io.ona.ziggy.domain.Village;
+import io.ona.ziggy.repository.AllVillages;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +13,7 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 import static junit.framework.Assert.assertEquals;
-import static org.ei.ziggy.util.EasyMap.mapOf;
+import static io.ona.ziggy.util.EasyMap.mapOf;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 

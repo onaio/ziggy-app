@@ -1,13 +1,13 @@
-package org.ei.ziggy.repository;
+package io.ona.ziggy.repository;
 
 import android.test.AndroidTestCase;
 import android.test.RenamingDelegatingContext;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.ei.ziggy.domain.Village;
-import org.ei.ziggy.domain.form.FormSubmission;
-import org.ei.ziggy.util.FormSubmissionBuilder;
-import org.ei.ziggy.util.Session;
+import io.ona.ziggy.domain.Village;
+import io.ona.ziggy.domain.form.FormSubmission;
+import io.ona.ziggy.util.FormSubmissionBuilder;
+import io.ona.ziggy.util.Session;
 
 import java.text.MessageFormat;
 import java.util.Date;
@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 import static java.util.Arrays.asList;
-import static org.ei.ziggy.domain.SyncStatus.PENDING;
-import static org.ei.ziggy.domain.SyncStatus.SYNCED;
-import static org.ei.ziggy.util.EasyMap.create;
+import static io.ona.ziggy.domain.SyncStatus.PENDING;
+import static io.ona.ziggy.domain.SyncStatus.SYNCED;
+import static io.ona.ziggy.util.EasyMap.create;
 
 public class FormDataRepositoryTest extends AndroidTestCase {
     private FormDataRepository repository;
