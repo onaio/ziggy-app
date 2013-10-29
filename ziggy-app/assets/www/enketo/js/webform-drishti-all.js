@@ -633,11 +633,11 @@ function JData(data){
 				// the node needs to belong to the document, .clone and .html aren't available
 				// in xml.
 				var node = $.parseXML('<'+nodeNames[j]+'/>').documentElement;
-                document.adoptNode(node);
+				document.adoptNode(node);
 
-                $node = $(node);
-                $current.append($node);
-                $current = $node;
+				$node = $(node);
+				$current.append($node);
+				$current = $node;
 			}
 			else{
 				$current = ( r.index && nodeNames[j] === r.name ) ? $current.children(nodeNames[j]).eq(r.index) : $current.children(nodeNames[j]);
