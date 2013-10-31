@@ -1,0 +1,31 @@
+<div toolbar-menu></div>
+
+
+<p>Please select the village that you would like to capture:</p>
+
+<p ng-hide="villages.length">
+    You're not responsible for any villages right now.
+</p>
+
+<ol class="village-list">
+     <li ng-repeat="village in villages track by $index" ng-click="selectVillage(village)">
+
+        <p>{{ village.name }}</p>
+
+        <button ng-click="openForm('village_profile', village)">Village Profile</button>
+        <button ng-click="openForm('cc_monthly_report', village)">Monthly Report</button>
+     </li>
+</ol>
+
+
+<form ng-controller="createVillageController" ng-submit="create(name)">
+    <fieldset>
+        <p>Create a new village:</p>
+        
+        <label for="name">Village name</label>
+        <input class="form-control" type="text" ng-model="name" name="name" id="name" ng-model="name" placeholder="E.g.: Pretoria" required>
+        <p>
+            <input class="btn btn-primary" type="submit" value="Create">
+        </p>
+    </fieldset>
+</form>

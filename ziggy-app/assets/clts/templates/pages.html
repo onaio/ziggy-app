@@ -1,0 +1,9 @@
+<div class="pages">
+    <div toolbar-menu></div>
+
+    <ol>
+         <li ng-repeat="page in pages[category]">
+            <a ng-click="$navigate.go('/pages/{{ category }}/{{ page.id }}/')">{{ page.title }}</a>
+         </li>
+    </ol>
+</div>
