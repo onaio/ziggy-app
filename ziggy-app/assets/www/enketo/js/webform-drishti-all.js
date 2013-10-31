@@ -629,8 +629,14 @@ function JData(data){
 			if ($current.children(nodeNames[j]).length === 0 ||
 				(r.name && r.index && nodeNames[j] === r.name && $current.children(nodeNames[j]).eq(r.index).length === 0)){
 				//console.log('nodeName does not exist, going to create it as child of ', $current[0]);
-				$node = $($.parseXML('<'+nodeNames[j]+'/>').documentElement);
-				$current.append($node.html());
+				
+				// the node needs to belong to the document, .clone and .html aren't available
+				// in xml.
+				var node = $.parseXML('<'+nodeNames[j]+'/>').documentElement;
+				document.adoptNode(node);
+
+				$node = $(node);
+				$current.append($node);
 				$current = $node;
 			}
 			else{
@@ -1352,7 +1358,9 @@ function Form (formSelector, dataStr, dataStrToEdit){
 			return;
 		}
 		if (this.node('*>meta>deprecatedID').get().length !== 1){
+			// this node needs to belong to the document.
 			var deprecatedIDXMLNode = $.parseXML("<deprecatedID/>").documentElement;
+            document.adoptNode(deprecatedIDXMLNode);
 			$(deprecatedIDXMLNode).appendTo(this.node('*>meta').get());
 		}
 		this.node('*>meta>deprecatedID').setVal(instanceID.getVal()[0], null, 'string');
