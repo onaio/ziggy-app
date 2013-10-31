@@ -1,0 +1,135 @@
+@import "normalize.less";
+@import "lesshat.less";
+
+* { 
+    .box-sizing(border-box);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+form {
+}
+.error {
+    color:red;
+}
+.actions {
+    text-align: right;
+    padding: 9px 0;
+}
+
+
+.toolbar-menu {
+
+    position: relative;
+    height: 50px;
+    line-height: 60px;
+    background: #cacaca;
+    text-align: center;
+
+    span {
+        display: inline-block;
+        width: 44px;
+        height: 50px;
+        
+        img {
+            width: 30px;
+        }
+    }
+}
+
+.main-menu {
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #6d6860;
+    position: relative;
+    overflow:hidden; 
+
+    .update {
+        position: absolute;
+        top: -35px;
+        right: -35px;
+        z-index: 10;
+
+        width: 70px;
+        height: 70px;
+        background: #cacaca;
+        border: 1px #b1b1b1 solid;
+        border-radius: 35px;
+        text-align: left;
+
+        img {
+            margin: 31px 0 0 2px;
+            padding: 8px;
+        }
+    }
+
+    .btn-small {
+        height: 120px;
+        width: 50%;
+        float: left;
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        -webkit-box-align:center;
+        
+        img {
+            width: 64px;
+            height: 64px;
+            background: #fff;
+            border-radius: 64px;
+            margin: 0 0 5px 0;
+        }
+    }
+
+    .btn-small:first-child {
+        border-right: 1px #bfbfbf solid;
+    }
+
+    .btn-large {
+        height: 161px;
+        width: 100%;
+        background: #e2e2e2;
+        border: 1px #bfbfbf solid;
+        border-width: 1px 0;
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        -webkit-box-align:center;
+
+        img {
+            width: 72px;
+            height: 72px;
+            border-radius: 72px;
+            background: #cacaca;
+        }
+    }
+ 
+    
+
+    span.ng-click-active img, span:active img, span:hover img {
+        box-shadow: 0 0 21px #bee6ff;
+    }
+}
+
+.actions {
+    margin: 0 0 18px 0;
+}
+
+
+.village-list {
+    li {
+        padding:0 0 9px 0;
+    }
+}
+
+
+.faqs {
+    ol {
+        margin: 18px;
+    }
+
+    li {
+        margin:0 0 18px 0;
+    }
+}

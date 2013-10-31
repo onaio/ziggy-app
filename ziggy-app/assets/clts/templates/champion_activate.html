@@ -1,0 +1,27 @@
+<h2>Welcome to CLTS</h2>
+
+<form name="form" ng-submit="activate(champion.msisdn)" novalidate>
+    
+    <fieldset>
+        <p>Please activate your profile by entering your mobile number</p>
+
+        
+        <label for="msisdn">Mobile number</label>
+        
+        <!-- <input class="form-control" type="text" name="msisdn" id="msisdn" ng-model="champion.msisdn" placeholder="E.g.: 1234567890" required> -->
+        <select ng-model="champion.msisdn" name="msisdn" id="msisdn" required>
+            <option value="1234567890">1234567890</option>
+            <option value="1020304050">1020304050</option>
+            <option value="XXXXXXXXXX">XXXXXXXXXX</option>
+        </select>
+
+        <p class="error" ng-if="champion.activationErrorCode == 404">
+            We do not know this mobile number. Are you sure you've
+            typed it in correctly?
+        </p>
+    </fieldset>
+    
+    <div class="actions">
+        <input type="submit" value="Activate">
+    </div>
+</form>
